@@ -6,6 +6,7 @@ Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
 
 
+
 let result = document.querySelector('#result');
 
 let parola = prompt('dammi una parola')
@@ -37,6 +38,8 @@ if (palindroma(parola)) {
 
 
 
+
+
 /*
 
 Pari e Dispari
@@ -48,6 +51,7 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 
 */
+
 
 let userParola = prompt('scegli pari o dispari');
 
@@ -70,13 +74,14 @@ if (userNumber > 5 || userNumber <1) {
 
 
 } else {
+    
     // function pari
-    function pari (firstValue, secondValue) {
+    function comparation (firstValue, secondValue) {
 
         if ((firstValue + secondValue) % 2 === 0) {
-            return true
+            return 'pari'
         } else {
-            return false
+            return 'dispari'
         }
     }
     
@@ -86,34 +91,28 @@ if (userNumber > 5 || userNumber <1) {
     }
 
     let computer = document.querySelector('#computer');
+    let user = document.querySelector('#user')
     let sum = document.querySelector('#sum');
     let userParolaHtml = document.querySelector('#user-parola');
     let winner = document.querySelector('#winner');
 
     computer.innerHTML = 'il computer ha scelto: ' + computerNumber;
 
+    user.innerHTML = 'tu hai scelto: ' + userNumber;
+
     sum.innerHTML = 'la somma tra: ' + userNumber + ' e ' + computerNumber + ' é: ' + addiction(userNumber, computerNumber);
 
     userParolaHtml.innerHTML = 'hai scelto ' + userParola;
 
     
-    if (pari(computerNumber, userNumber)) {
-
-        if (userParola.toLowerCase() === comparation.toLowerCase()) {
-            winner.innerHTML = 'hai vinto';
-        } else {
-            winner.innerHTML = 'hai perso';
-        }
-
+    if (comparation(computerNumber, userNumber) == userParola) {
+        winner.innerHTML = 'hai vinto';
     } else {
-
-        if (userParola.toLowerCase() === comparation.toLowerCase()) {
-            winner.innerHTML = 'hai perso';
-        } else {
-            winner.innerHTML = 'hai vinto';
-        }
+        winner.innerHTML = 'hai perso';
     }
 }
+
+
 
 
 
