@@ -55,8 +55,6 @@ Dichiariamo chi ha vinto.
 
 let userParola = prompt('scegli pari o dispari');
 
-let comparation = 'pari';
-
 let userNumber = parseInt(prompt('scegli un numero da 1 a 5'));
 
 //random compur function
@@ -71,7 +69,6 @@ let computerNumber = numberRandom(5, 1);
 if (userNumber > 5 || userNumber <1) {
 
     alert('insert a correct number')
-
 
 } else {
     

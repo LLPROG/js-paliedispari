@@ -5,7 +5,7 @@
 }
 
 .container {
-    width: 1000px;
+    width: 80vw;
     margin: 0 auto;
     padding-bottom: 5rem;
     padding-top: 2rem;
@@ -20,7 +20,7 @@
 
 h1 {
     padding: 2rem;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .content {
