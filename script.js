@@ -6,6 +6,8 @@ Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
 
 
+let result = document.querySelector('#result');
+
 let parola = prompt('dammi una parola')
 
 function palindroma(userParola) {
@@ -24,9 +26,9 @@ function palindroma(userParola) {
 }
 
 if (palindroma(parola)) {
-    console.log('é palindroma');
+    result.innerHTML = 'la parola che hai scelto é palindroma'
 } else {
-    console.log('non é palindroma');
+    result.innerHTML = 'la parola che hai scelto non é palindroma'
 
 }
 
@@ -53,6 +55,8 @@ let comparation = 'pari';
 
 let userNumber = parseInt(prompt('scegli un numero da 1 a 5'));
 
+//random compur function
+
 function numberRandom(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -64,8 +68,9 @@ if (userNumber > 5 || userNumber <1) {
 
     alert('insert a correct number')
 
+
 } else {
-    
+    // function pari
     function pari (firstValue, secondValue) {
 
         if ((firstValue + secondValue) % 2 === 0) {
@@ -75,29 +80,38 @@ if (userNumber > 5 || userNumber <1) {
         }
     }
     
+    //function addizione
     function addiction (firstValue, secondValue) {
         return firstValue + secondValue;
     }
-    
-    console.log('il computer ha scelto: ' + computerNumber);
-    console.log('la somma tra: ' + userNumber + ' e ' + computerNumber + ' é: ' + addiction(userNumber, computerNumber));
-    console.log('hai scelto ' + userParola)
+
+    let computer = document.querySelector('#computer');
+    let sum = document.querySelector('#sum');
+    let userParolaHtml = document.querySelector('#user-parola');
+    let winner = document.querySelector('#winner');
+
+    computer.innerHTML = 'il computer ha scelto: ' + computerNumber;
+
+    sum.innerHTML = 'la somma tra: ' + userNumber + ' e ' + computerNumber + ' é: ' + addiction(userNumber, computerNumber);
+
+    userParolaHtml.innerHTML = 'hai scelto ' + userParola;
+
     
     if (pari(computerNumber, userNumber)) {
+
         if (userParola.toLowerCase() === comparation.toLowerCase()) {
-            console.log('hai vinto');
+            winner.innerHTML = 'hai vinto';
         } else {
-            console.log('hai perso');
+            winner.innerHTML = 'hai perso';
         }
 
     } else {
 
         if (userParola.toLowerCase() === comparation.toLowerCase()) {
-            console.log('hai perso');
+            winner.innerHTML = 'hai perso';
         } else {
-            console.log('hai vinto');
+            winner.innerHTML = 'hai vinto';
         }
-    
     }
 }
 
