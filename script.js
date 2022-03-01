@@ -53,11 +53,11 @@ Dichiariamo chi ha vinto.
 */
 
 
-let userParola = prompt('scegli pari o dispari');
+let userParola = prompt('scegli e scrivi pari o dispari');
 
-let userNumber = parseInt(prompt('scegli un numero da 1 a 5'));
+let userNumber = parseInt(prompt('scegli e scrivi un numero da 1 a 5'));
 
-//random compur function
+//random computer function
 
 function numberRandom(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -68,17 +68,17 @@ let computerNumber = numberRandom(5, 1);
 
 if (userNumber > 5 || userNumber <1) {
 
-    alert('insert a correct number')
+    alert('insert a correct number');
 
 } else {
     
     // function pari
     function comparation (firstValue, secondValue) {
 
-        if ((firstValue + secondValue) % 2 === 0) {
-            return 'pari'
+        if ((firstValue + secondValue) % 2 == 0) {
+            return 'pari';
         } else {
-            return 'dispari'
+            return 'dispari';
         }
     }
     
@@ -99,10 +99,10 @@ if (userNumber > 5 || userNumber <1) {
 
     sum.innerHTML = 'la somma tra: ' + userNumber + ' e ' + computerNumber + ' é: ' + addiction(userNumber, computerNumber);
 
-    userParolaHtml.innerHTML = 'hai scelto ' + userParola;
+    userParolaHtml.innerHTML = 'hai scelto ' + userParola.toLowerCase();
 
     
-    if (comparation(computerNumber, userNumber) == userParola) {
+    if (comparation(computerNumber, userNumber) === userParola.toLowerCase()) {
         winner.innerHTML = 'hai vinto';
     } else {
         winner.innerHTML = 'hai perso';
